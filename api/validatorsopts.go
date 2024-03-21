@@ -31,4 +31,6 @@ type ValidatorsOpts struct {
 	PubKeys []phase0.BLSPubKey
 	// ValidatorStates is a list of validator states to restric the returned values.  If no validator states are supplied then no filter will be applied.
 	ValidatorStates []apiv1.ValidatorState
+	// WithoutBeaconState prevents the retrieval of BeaconState for large validator sets, which is often much faster but allocates much more memory.
+	WithoutBeaconState bool
 }
